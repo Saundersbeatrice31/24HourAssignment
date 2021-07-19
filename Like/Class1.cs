@@ -8,5 +8,6 @@ namespace Like
 {
     public class Class1
     {
+
     }
 }
