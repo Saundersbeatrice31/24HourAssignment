@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Comment
 {
-
-    public class Reply
+    public class Comment
     {
-        
     }
 }
