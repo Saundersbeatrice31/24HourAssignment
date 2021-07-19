@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
 
-namespace Comment
+namespace _24HourAssignment.Services
 {
-    public class Comment
+   public class Like
     {
+        [HttpPost]
     }
 }
