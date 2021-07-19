@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _24HourAssignment.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,5 +18,8 @@ namespace _24HourAssignment.Data
         public string Text { get; set; }
         [Required]
         public Guid AuthorId { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
+        public virtual ICollection<Like> Replies { get; set; } = new List<Like>();
+
     }
 }

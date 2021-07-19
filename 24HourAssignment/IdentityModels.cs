@@ -1,10 +1,5 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using _24HourAssignment.Data;
-using _24HourAssignment.Data.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -35,9 +30,6 @@ namespace _24HourAssignment.Models
             return new ApplicationDbContext();
         }
         public DbSet<Post> Posts { get; set; }
-        public DbSet<Reply> Replies { get; set; }
-        public DbSet<Comment> Comments { get; set; }
-        public DbSet<Like> Likes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
