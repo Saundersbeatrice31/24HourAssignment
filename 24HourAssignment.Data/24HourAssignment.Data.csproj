@@ -88,7 +88,6 @@
     <Compile Include="Entities\Like.cs" />
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\Reply.cs" />
-    <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
