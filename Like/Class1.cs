@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Like
 {
-    public class Class1
-    {a
+
+    public class Like
+    {
 
     }
 }
