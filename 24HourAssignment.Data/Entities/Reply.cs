@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Comment
+namespace _24HourAssignment.Data.Entities
 {
-    public class Comment
+    class Reply
     {
     }
 }
