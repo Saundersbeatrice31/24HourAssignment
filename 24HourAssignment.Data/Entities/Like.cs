@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _24HourAssignment.Data.Entities
+namespace _24HourAssignment.Data
 {
     public class Like
     {
