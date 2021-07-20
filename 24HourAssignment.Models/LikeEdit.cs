@@ -8,6 +8,6 @@ namespace _24HourAssignment.Models
 {
     public class LikeEdit
     {
-        public int LikeId { get; set; }
+        public int Id { get; set; }
     }
 }

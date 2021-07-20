@@ -6,19 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _24HourAssignment.Data.Entities
+namespace _24HourAssignment.Data
 {
     public class Reply
     {
-        [ForeignKey(nameof(Reply))]
+        [Key]
         [Required]
-        public int ReplyId { get; set; }
-        public virtual Reply reply { get; set; }
-
+        public int Id { get; set; }
+       
         [Required]
         public string Text { get; set; }
 
         [Required]
         public Guid AuthorId { get; set; }
+
+        [ForeignKey(nameof(Comment))]
+        public int ComId { get; set; }
+        public virtual Comment Comment { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using _24HourAssignment.Data.Entities;
+﻿using _24HourAssignment.Data;
 using _24HourAssignment.Models;
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace _24HourAssignment.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<ReplyListItem> GetReplies()
+        public IEnumerable<ReplyListItem> GetReplies(Comment CommId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -42,7 +42,7 @@ namespace _24HourAssignment.Services
                             p =>
                                 new ReplyListItem
                                 {
-                                    ReplyId = p.ReplyId,                                    
+                                    Id = p.Id,                                    
                                     Text = p.Text
                                 }
                         );
@@ -60,7 +60,7 @@ namespace _24HourAssignment.Services
                 return
                     new ReplyDetail
                     {
-                        ReplyId = entity.ReplyId,
+                        Id = entity.Id,
                         Text = entity.Text
                     };
             }
@@ -72,7 +72,7 @@ namespace _24HourAssignment.Services
                 var entity =
                     ctx
                         .Replies
-                        .Single(p => p.ReplyId == model.ReplyId && p.AuthorId == _userId);                
+                        .Single(p => p.Id == model.Id && p.AuthorId == _userId);                
                 entity.Text = model.Text;
 
                 return ctx.SaveChanges() == 1;
@@ -85,7 +85,7 @@ namespace _24HourAssignment.Services
                 var entity =
                     ctx
                         .Replies
-                        .Single(p => p.ReplyId == id && p.AuthorId == _userId);
+                        .Single(p => p.Id == id && p.AuthorId == _userId);
                 ctx.Replies.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

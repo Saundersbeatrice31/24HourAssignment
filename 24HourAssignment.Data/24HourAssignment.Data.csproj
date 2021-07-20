@@ -89,11 +89,42 @@
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\Reply.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202107201709336_InitialCreate.cs" />
+    <Compile Include="Migrations\202107201709336_InitialCreate.Designer.cs">
+      <DependentUpon>202107201709336_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107201742334_Added Changes to Comments.cs" />
+    <Compile Include="Migrations\202107201742334_Added Changes to Comments.Designer.cs">
+      <DependentUpon>202107201742334_Added Changes to Comments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107201746206_Added Changes to Post.cs" />
+    <Compile Include="Migrations\202107201746206_Added Changes to Post.Designer.cs">
+      <DependentUpon>202107201746206_Added Changes to Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107201749015_Added Changes to Like.cs" />
+    <Compile Include="Migrations\202107201749015_Added Changes to Like.Designer.cs">
+      <DependentUpon>202107201749015_Added Changes to Like.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107201709336_InitialCreate.resx">
+      <DependentUpon>202107201709336_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107201742334_Added Changes to Comments.resx">
+      <DependentUpon>202107201742334_Added Changes to Comments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107201746206_Added Changes to Post.resx">
+      <DependentUpon>202107201746206_Added Changes to Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107201749015_Added Changes to Like.resx">
+      <DependentUpon>202107201749015_Added Changes to Like.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

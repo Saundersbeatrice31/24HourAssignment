@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using _24HourAssignment.Data;
-using _24HourAssignment.Data.Entities;
+using _24HourAssignment.Data ;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
