@@ -34,10 +34,10 @@ namespace _24HourAssignment.Controllers
                 return InternalServerError();
             return Ok();
         }
-        public IHttpActionResult Get (int id)
+        public IHttpActionResult Get (Guid AuthorId)
         {
             PostService postService = CreatePostService();
-            var post = postService.GetPostById(id);
+            var post = postService.GetPostById(AuthorId);
             return Ok(post);
         }
         public IHttpActionResult Put(PostEdit post)

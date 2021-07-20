@@ -81,8 +81,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentService.cs" />
+    <Compile Include="LikeService.cs" />
     <Compile Include="PostService.cs" />
-    <Compile Include="Like.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReplyService.cs" />
   </ItemGroup>
@@ -92,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\24HourAssignment.Data\24HourAssignment.Data.csproj">
-      <Project>{f707c40d-a744-4820-9a20-987052d5cfb0}</Project>
+      <Project>{F707C40D-A744-4820-9A20-987052D5CFB0}</Project>
       <Name>24HourAssignment.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\24HourAssignment.Models\24HourAssignment.Models.csproj">

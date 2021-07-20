@@ -1,4 +1,5 @@
-﻿using _24HourAssignment.Data.Entities;
+﻿using _24HourAssignment.Data;
+using _24HourAssignment.Data.Entities;
 using _24HourAssignment.Models;
 using System;
 using System.Collections.Generic;
@@ -8,85 +9,82 @@ using System.Threading.Tasks;
 
 namespace _24HourAssignment.Services
 {
-    public class ReplyService
+    public class LikeService
     {
         private readonly Guid _userId;
-        public ReplyService (Guid userId)
+        public LikeService(Guid userId)
         {
             _userId = userId;
         }
-        public bool CreateReply(ReplyCreate model)
+        public bool CreateLike (LikeCreate model)
         {
             var entity =
-                new Reply()
+                new Like()
                 {
-                    AuthorId = _userId,
-                    Text = model.Text
+                    OwnerId = _userId,
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Replies.Add(entity);
+                ctx.Likes.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<ReplyListItem> GetReplies(Comment CommId)
+        public IEnumerable<LikeListItem> GetLikes(Post Id)
         {
             using (var ctx = new ApplicationDbContext())
             {
 
                 var query =
                     ctx
-                        .Replies
-                        .Where(p => p.AuthorId == _userId)
+                        .Likes
+                        .Where(p => p.OwnerId == _userId)
                         .Select(
                             p =>
-                                new ReplyListItem
+                                new LikeListItem
                                 {
-                                    ReplyId = p.ReplyId,                                    
-                                    Text = p.Text
+                                   LikeId = p.LikeId,
                                 }
                         );
                 return query.ToArray();
             }
         }
-        public ReplyDetail GetReplyById(Guid AuthorId)
+        public LikeDetail GetLikeById(Guid AuthorId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Replies
-                        .Single(p => p.AuthorId == _userId);
+                        .Likes
+                        .Single(p => p.OwnerId == _userId);
                 return
-                    new ReplyDetail
+                    new LikeDetail
                     {
-                        ReplyId = entity.ReplyId,
-                        Text = entity.Text
+                        LikeId = entity.LikeId,
+                       
                     };
             }
         }
-        public bool UpdateReply(ReplyEdit model)
+        public bool UpdateLike(LikeEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Replies
-                        .Single(p => p.ReplyId == model.ReplyId && p.AuthorId == _userId);                
-                entity.Text = model.Text;
-
+                        .Likes
+                        .Single(p => p.LikeId == model.LikeId && p.OwnerId == _userId);
+                entity.LikeId = model.LikeId;                
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteReply(int id)
+        public bool DeleteLike(int Likeid)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Replies
-                        .Single(p => p.ReplyId == id && p.AuthorId == _userId);
-                ctx.Replies.Remove(entity);
+                        .Likes
+                        .Single(p => p.LikeId == Likeid && p.OwnerId == _userId);
+                ctx.Likes.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
 

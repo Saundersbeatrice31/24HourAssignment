@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Http;
 
-namespace _24HourAssignment.Services
+namespace _24HourAssignment.Models
 {
-   public class Like
+   public class LikeListItem
     {
-        [HttpPost]
+        public int LikeId { get; set; }
     }
 }
