@@ -9,7 +9,7 @@ namespace _24HourAssignment.Models
 {
    public class CommentCreate
     {
-        public int CommId { get; set; }
+        public int Id { get; set; }
         [MaxLength(10000)]
         public string Text { get; set; }
     }

@@ -1,5 +1,5 @@
 ﻿using _24HourAssignment.Data;
-using _24HourAssignment.Data.Entities;
+using _24HourAssignment.Data;
 using _24HourAssignment.Models;
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace _24HourAssignment.Services
                             p =>
                                 new LikeListItem
                                 {
-                                   LikeId = p.LikeId,
+                                   Id = p.Id,
                                 }
                         );
                 return query.ToArray();
@@ -59,7 +59,7 @@ namespace _24HourAssignment.Services
                 return
                     new LikeDetail
                     {
-                        LikeId = entity.LikeId,
+                        Id = entity.Id,
                        
                     };
             }
@@ -71,19 +71,19 @@ namespace _24HourAssignment.Services
                 var entity =
                     ctx
                         .Likes
-                        .Single(p => p.LikeId == model.LikeId && p.OwnerId == _userId);
-                entity.LikeId = model.LikeId;                
+                        .Single(p => p.Id == model.Id && p.OwnerId == _userId);
+                entity.Id = model.Id;                
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteLike(int Likeid)
+        public bool DeleteLike(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Likes
-                        .Single(p => p.LikeId == Likeid && p.OwnerId == _userId);
+                        .Single(p => p.Id == id && p.OwnerId == _userId);
                 ctx.Likes.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

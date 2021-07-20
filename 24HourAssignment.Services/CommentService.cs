@@ -1,5 +1,5 @@
 ﻿using _24HourAssignment.Data;
-using _24HourAssignment.Data.Entities;
+using _24HourAssignment.Data;
 using _24HourAssignment.Models;
 using System;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace _24HourAssignment.Services
             new Comment()
             {
                 AuthorId = _userId,
-                CommId = model.CommId,
+                Id = model.Id,
                 Text = model.Text,
                 
             };
@@ -44,7 +44,7 @@ namespace _24HourAssignment.Services
                 e =>
                 new CommentListItem
                 {
-                    CommId = e.CommId,
+                    Id = e.Id,
                     Text = e.Text
                 }
             );
@@ -62,7 +62,7 @@ namespace _24HourAssignment.Services
                 return
                     new CommentDetail
                     {
-                        CommId = entity.CommId,                       
+                        Id = entity.Id,                       
                         Text = entity.Text,                        
                     };
             }
@@ -74,7 +74,7 @@ namespace _24HourAssignment.Services
                 var entity =
                     ctx
                         .Comments
-                        .Single(e => e.CommId == model.CommId && e.AuthorId == _userId);
+                        .Single(e => e.Id == model.Id && e.AuthorId == _userId);
                 entity.Text = model.Text;               
                 return ctx.SaveChanges() == 1;
             }
@@ -86,7 +86,7 @@ namespace _24HourAssignment.Services
                 var entity =
                     ctx
                         .Comments
-                        .Single(e => e.CommId == CommId && e.AuthorId == _userId);
+                        .Single(e => e.Id == CommId && e.AuthorId == _userId);
                 ctx.Comments.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

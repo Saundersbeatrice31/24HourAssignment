@@ -1,4 +1,5 @@
-﻿using _24HourAssignment.Models;
+﻿using _24HourAssignment.Data;
+using _24HourAssignment.Models;
 using _24HourAssignment.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -19,10 +20,10 @@ namespace _24HourAssignment.Controllers
             var replyService = new ReplyService(userId);
             return replyService;
         }
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(Comment CommId)
         {
             ReplyService replyService = CreateReplyService();
-            var replies = replyService.GetReplies();
+            var replies = replyService.GetReplies(CommId);
             return Ok(replies);
         }
         public IHttpActionResult Reply(ReplyCreate reply)
@@ -34,10 +35,10 @@ namespace _24HourAssignment.Controllers
                 return InternalServerError();
             return Ok();
         }
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult Get(Guid AuthorId)
         {
             ReplyService replyService = CreateReplyService();
-            var reply = replyService.GetReplyById(id);
+            var reply = replyService.GetReplyById(AuthorId);
             return Ok(reply);
         }
         public IHttpActionResult Put(ReplyEdit reply)

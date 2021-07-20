@@ -8,7 +8,7 @@ namespace _24HourAssignment.Models
 {
     public class CommentEdit
     {
-        public int CommId { get; set; }
+        public int Id { get; set; }
         public string Text { get; set; }
     }
 }
