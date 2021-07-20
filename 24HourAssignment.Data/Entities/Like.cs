@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _24HourAssignment.Data.Entities
+namespace _24HourAssignment.Data
 {
     public class Like
     {
         [ForeignKey(nameof(Like))]
         [Required]
-        public int Id { get; set; }
+        public int LikeId { get; set; }
         public virtual Like like { get; set; }
         public Guid OwnerId { get; set; }
     }

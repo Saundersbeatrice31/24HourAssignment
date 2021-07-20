@@ -81,6 +81,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentService.cs" />
+    <Compile Include="LikeService.cs" />
     <Compile Include="PostService.cs" />
     <Compile Include="Like.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
