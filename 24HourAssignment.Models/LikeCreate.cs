@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Like
+namespace _24HourAssignment.Models
 {
-
-    public class Like
+    public class LikeCreate
     {
-
+        
+        public int LikeId { get; set; }
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Comment
+namespace Like
 {
-    public class Class1
+    public class Like
     {
+
     }
 }
