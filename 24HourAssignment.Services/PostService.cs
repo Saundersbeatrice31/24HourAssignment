@@ -52,14 +52,14 @@ namespace _24HourAssignment.Services
             return query.ToArray();
             }
         }
-        public PostDetail GetPostById (int Id)
+        public PostDetail GetPostById (Guid AuthorId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Posts
-                        .Single(p => p.Id == Id && p.AuthorId == _userId);
+                        .Single(p => p.AuthorId == _userId);
                 return
                     new PostDetail
                     {

@@ -12,7 +12,7 @@ namespace _24HourAssignment.Data.Entities
     {
         [ForeignKey(nameof(Like))]
         [Required]
-        public int Id { get; set; }
+        public int LikeId { get; set; }
         public virtual Like like { get; set; }
         public Guid OwnerId { get; set; }
     }
